@@ -1,0 +1,33 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.8.0",
+    "swagger-autogen": "^2.22.0",
+    "swagger-ui-express": "^4.6.0"
+  },
+  "name": "on19-tet-s18-projeto-controle-de-or-amento-de-projetos-de-li",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LilianeGomes31/on19-tet-s18-projeto-Controle-de-Or-amento-de-projetos-de-LI.git"
+  },
+  "keywords": [],
+  "author": "Liliane Gomes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LilianeGomes31/on19-tet-s18-projeto-Controle-de-Or-amento-de-projetos-de-LI/issues"
+  },
+  "homepage": "https://github.com/LilianeGomes31/on19-tet-s18-projeto-Controle-de-Or-amento-de-projetos-de-LI#readme",
+  "description": "Projeto final para conclusão do curso de back end da {reprograma}, turma on19.",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

@@ -8,8 +8,9 @@ const despesaSchema = new mongoose.Schema(
     },
     nome_Da_Despesa: {
       type: String,
-      required: true,
-      unique: true,
+      minLenght: 0,
+      maxLenght: 100,
+      required: true,      
     },
     valor_Da_Despesa: {
       type: Number,
@@ -20,15 +21,16 @@ const despesaSchema = new mongoose.Schema(
       required: true,
     },
     tipo_De_Despesa: {
-      type: [String],
+      type: String,
+      enum: ["Recursos Humanos Direto", "Recursos Humanos Indireto", "Material de Consumo", "Treinamento", "Equipamentos", " Software", "Serviços de Terceiros", "Viagens", "Outros Correlatos", "Livros", "Obras", "Taxa Administrativa", "Reserva de Pesquisa"],
       required: true,
     },
     justificativa: String,
 
     projeto: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: mongoose.Types.ObjectId,
       required: true,
-      ref: "Projeto",
+      ref: "projeto",
     },
   },
 
@@ -37,6 +39,6 @@ const despesaSchema = new mongoose.Schema(
   }
 );
 
-const Model = mongoose.model("Despesa", despesaSchema);
+const Despesa = mongoose.model("despesa", despesaSchema);
 
-module.exports = Model;
+module.exports = Despesa;

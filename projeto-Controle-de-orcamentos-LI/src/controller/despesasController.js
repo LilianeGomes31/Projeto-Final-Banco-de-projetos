@@ -1,9 +1,9 @@
-const despesasModel = require("../models/despesasModel");
-const projetosModel = require("../models/projetosModel");
+const despesaModel = require("../models/despesasModel");
+const projetoModel = require("../models/projetosModel");
 
 const listaTodasAsDespesas = async (req, res) => {
   try {
-    const todasAsDespesas = await despesasModel.find().populate("Projeto");
+    const todasAsDespesas = await despesaModel.find().populate("projeto");
     res.status(200).json(todasAsDespesas);
   } catch {
     res.status(500).json({ message: error.message });
@@ -12,9 +12,9 @@ const listaTodasAsDespesas = async (req, res) => {
 
 const achaDespesaPorId = async (req, res) => {
   try {
-    const achaDespesa = await despesasModel
+    const achaDespesa = await despesaModel
       .findById(req.params.id)
-      .populate("Projeto");
+      .populate("projeto");
     if (achaDespesa == null) {
       res.status(404).json({ message: "Despesa não encontrada" });
     }
@@ -40,13 +40,13 @@ const cadastraNovaDespesa = async (req, res) => {
         .json({ message: "Favor inserir id do Projeto." });
     }
 
-    const achaProjeto = await projetosModel.findById(projetoId);
+    const achaProjeto = await projetoModel.findById(projetoId);
 
     if (!achaProjeto) {
       return res.status(404).json({ message: "Projeto não encontrado" });
     }
 
-    const novaDespesa = new despesasModel({
+    const novaDespesa = new despesaModel({
       projeto: projetoId,
       nome_Da_Despesa,
       valor_Da_Despesa,
@@ -68,20 +68,20 @@ const atualizaDespesa = async (req, res) => {
   try {
     const { id } = req.params;
     const {
-        projeto: projetoId,
-        nome_Da_Despesa,
-        valor_Da_Despesa,
-        data_De_Realizacao_Da_Despesa,
-        tipo_De_Despesa,
-        justificativa,
+      projeto: projetoId,
+      nome_Da_Despesa,
+      valor_Da_Despesa,
+      data_De_Realizacao_Da_Despesa,
+      tipo_De_Despesa,
+      justificativa,
     } = req.body;
-    const achaDespesa = await despesasModel.findById(id);
+    const achaDespesa = await despesaModel.findById(id);
     if (achaDespesa == null) {
       res.status(404).json({ message: "Despesa não encontrada" });
     }
 
     if (projetoId) {
-      const achaDespesa = await projetosModel.findById(projetoId);
+      const achaDespesa = await projetoModel.findById(projetoId);
 
       if (achaDespesa == null) {
         return res.status(404).json({ message: "Projeto não encontrado" });
@@ -91,7 +91,6 @@ const atualizaDespesa = async (req, res) => {
     achaDespesa.valor_Da_Despesa = valor_Da_Despesa || achaDespesa.valor_Da_Despesa;
     achaDespesa.tipo_De_Despesa = tipo_De_Despesa || achaDespesa.tipo_De_Despesa;
     achaDespesa.data_De_Realizacao_Da_Despesa = data_De_Realizacao_Da_Despesa || achaDespesa.data_De_Realizacao_Da_Despesa;
-    achaDespesa.mode = mode || achaDespesa.mode;
     achaDespesa.projeto = projetoId || achaDespesa.projeto;
 
     const despesaSalva = await achaDespesa.save();
@@ -104,7 +103,7 @@ const atualizaDespesa = async (req, res) => {
 const deletaDespesa = async (req, res) => {
   try {
     const { id } = req.params;
-    const achaDespesa = await despesasModel.findById(id);
+    const achaDespesa = await despesaModel.findById(id);
 
     if (achaDespesa == null) {
       return res.status(404).json({ message: `Despesa com ${id} não foi encontrada` });
@@ -121,7 +120,7 @@ const deletaDespesa = async (req, res) => {
 
 const achaDespesaPorNome = async (req, res) => {
   try {
-    const achaDespesa = await despesasModel.find({ nome_Da_Despesa: req.query.nome_Da_Despesa }).populate("Projeto");
+    const achaDespesa = await despesaModel.find({ nome_Da_Despesa: req.query.nome_Da_Despesa }).populate("projeto");
     
     if (achaDespesa == true) {
       res.status(200).json(achaDespesa);

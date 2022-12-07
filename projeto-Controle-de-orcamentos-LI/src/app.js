@@ -2,10 +2,12 @@ require("dotenv-safe").config();
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("./database/dbConnect");
+const { model, Schema } = require("mongoose");
 const projetosRoutes = require("./routes/projetosRoute");
 const despesasRoutes = require("./routes/despesasRoute");
 const depositosRoutes = require("./routes/depositosRoute");
 const usuariosRoutes = require("./routes/usuariosRoute");
+
 
 const app = express();
 

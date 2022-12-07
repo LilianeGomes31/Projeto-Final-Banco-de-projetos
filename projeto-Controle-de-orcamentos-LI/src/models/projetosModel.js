@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const projetoSchema = mongoose.Schema(
+const projetoSchema = new mongoose.Schema(
   {
     _id: {
       type: mongoose.Schema.Types.ObjectId,
@@ -27,6 +27,18 @@ const projetoSchema = mongoose.Schema(
       type: Number,
       required: true,
     },
+    despesas: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: false,
+      ref: "despesa",
+    },
+
+    depositos: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: false,
+      ref: "deposito",
+    },
+
     saldo_Do_Projeto: {
       type: Number,
       valor: 0,
@@ -39,9 +51,14 @@ const projetoSchema = mongoose.Schema(
       default: "no description",
     },
   },
- 
+  {
+    timestamps: true,
+  },
+  {
+    versionKey: false,
+  }
 );
 
-const Model = mongoose.model("Projeto", projetoSchema);
+const projetos = mongoose.model("projeto", projetoSchema);
 
-module.exports = Model;
+module.exports = projetos;
