@@ -1,7 +1,7 @@
 {
-  "name": "on19-tet-s18-projeto-controle-de-or-amento-de-projetos-de-li",
+  "name": "banco-de-projetos",
   "version": "1.0.0",
-  "description": "",
+  "description": "Projeto final de conclusão do bootcamp de backend da {reprograma} da turma on19.",
   "main": "server.js",
   "dependencies": {
     "abbrev": "^1.1.1",
@@ -180,14 +180,15 @@
     "type": "git",
     "url": "git+https://github.com/LilianeGomes31/on19-tet-s18-projeto-Controle-de-Or-amento-de-projetos-de-LI.git"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Liliane Gomes",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/LilianeGomes31/on19-tet-s18-projeto-Controle-de-Or-amento-de-projetos-de-LI/issues"
   },
   "homepage": "https://github.com/LilianeGomes31/on19-tet-s18-projeto-Controle-de-Or-amento-de-projetos-de-LI#readme",
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "jest": "28.1.0",
+    "nodemon": "^2.0.20",
+    "supertest": "6.2.3"
   }
 }
