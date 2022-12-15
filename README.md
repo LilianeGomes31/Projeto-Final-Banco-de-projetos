@@ -1,10 +1,6 @@
-<<<<<<< HEAD
+
 ![Banco de projetos](https://github.com/LilianeGomes31/Projeto-Final-Banco-de-projetos/blob/e8549a8ad64487083360ca32c8ca17c5b4057d09/imagens/Tela%201.png)
 
-=======
-  
-  ![Banco de Projetos]([URL da imagem](https://github.com/LilianeGomes31/Projeto-Final-Banco-de-projetos/blob/main/imagens/Tela%201.png))
->>>>>>> 62af1c660b3c71d9f931c2789a987bfcd6c9c196
 
 
 ## *Sumário*
