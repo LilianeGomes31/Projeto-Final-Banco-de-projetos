@@ -1,12 +1,14 @@
-# BANDO DE PROJETOS
+![Banco de projetos](https://github.com/LilianeGomes31/Projeto-Final-Banco-de-projetos/blob/e8549a8ad64487083360ca32c8ca17c5b4057d09/imagens/Tela%201.png)
+
+
 
 ## *Sumário*
 
 - [Apresentação e justiticativa](#apresentação-e-justificativa)
 - [Contextualização](#contextualização)
 - [Funcionalidades](#funcionalidades)
-- [Aruitetura MVC](#arquitetura-MVC)
-- [Tecnologias E dependências e utilizadas](#tecnologias-e-dependências-utilizadas)
+- [Arquitetura MVC](#arquitetura-MVC)
+- [Tecnologias e dependências e utilizadas](#tecnologias-e-dependências-utilizadas)
 - [Instruções para instalação](#instruções-para-instalação)
 - [Documentação da API](#documentação-da-api)
 - [Contribuição no projeto](#contribuição-no-projeto)
@@ -80,7 +82,7 @@ obs., A API tem as mesmas funcionalidades listadas acima para Despesas e Depósi
   |-  📄 Swagger.js    
   ```
 
-## :computer: Tecnologias e Dependências Utilizadas
+## Tecnologias e Dependências Utilizadas
 
 | Ferramenta      | Descrição                                                                                                                                |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
@@ -137,7 +139,7 @@ npm install dotenv-safe -- save
 
 Swagger:
 npm i swagger-autogen swagger-ui-express
-```
+
 
 ## 🔒 Variáveis de Ambiente
 
@@ -147,6 +149,14 @@ npm i swagger-autogen swagger-ui-express
 `SECRET=CHAVE_HASH_SEM_ESPAÇO`  
 `DATABASE_MONGO=CONEXÃO_COM_MONGO_SEM_ASPAS`  
   
+
+Link para a documentação:
+
+📝 [Swagger](https://banco-de-projetos.onrender.com/minha-rota-de-documentacao/#/)
+
+📝 [Render](https://banco-de-projetos.onrender.com/)
+
+
 
 ## Documentação da API
 
@@ -161,7 +171,7 @@ npm i swagger-autogen swagger-ui-express
 | GET    | /bancodeprojetos/usuarios/usuarios/          | Listar todos os usuários                   |   200  |  ❌  |
 | DELETE | /bancodeprojetos/usuarios/usuarios/config/:id| Remover um usuário                         |   200  |  ❌  |
 | POST   | /bancodeprojetos/usuarios/usuarios/login/:id | Devolve o token de um usuário              |   200  |  ✔️  |
-<br>
+
 
 - Projetos
 
@@ -186,7 +196,6 @@ npm i swagger-autogen swagger-ui-express
 | DELETE | /bancodeprojetos/projetos/despesas/:id    | Remove o cadastro de uma despesa pelo ID |   200  |  ❌  |
 
 
-
 - Depósitos
 
 | Verbo  |   Rota                                               | Descrição da Rota              | Status | Auth |
@@ -198,18 +207,6 @@ npm i swagger-autogen swagger-ui-express
 | DELETE | /bancodeprojetos/projetos/depositos/:id    | Remove o cadastro de um depósito pelo ID |   200  |  ❌  |
 
  *PROTEÇÃO* Para testar via Postman, passar bearer token no header de autenticação $ Bearer Token
-
-
-
-
-Link para a documentação:
-
-📝 [Swagger](https://banco-de-projetos.onrender.com/minha-rota-de-documentacao/#/)
-
-📝 [Render](https://banco-de-projetos.onrender.com/)
-
-
-
 
 ## ✨ **Contribuição no projeto** 
 
